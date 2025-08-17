@@ -7,6 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from api.routes import router as api_router
 from services.scheduler import start_scheduler
 
+# Initialize FastAPI app
 app = FastAPI(
     title="MarketMate API",
     description="Backend API for MarketMate – AI Social & SEO Assistant",
@@ -16,7 +17,7 @@ app = FastAPI(
 # Allow frontend to access the API
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Adjust if deployed elsewhere
+    allow_origins=["http://localhost:3000"],  # Change if deployed
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -25,10 +26,13 @@ app.add_middleware(
 # Include all API routes
 app.include_router(api_router)
 
-# Health check
+# Health check endpoint
 @app.get("/")
 def read_root():
     return {"message": "✅ MarketMate API is running"}
 
-# Start background job scheduler
-start_scheduler()
+# Start background job scheduler (wrapped in try/except to avoid crashing)
+try:
+    start_scheduler()
+except Exception as e:
+    print(f"⚠️ Scheduler could not start: {e}")
