@@ -1,3 +1,22 @@
+/* Remove unwanted gaps */
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Push all content below the fixed navbar */
+body {
+  padding-top: 70px; /* adjust if navbar is taller */
+}
+
+.container, .container-fluid {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+
 .text-gradient {
   background: linear-gradient(90deg, #007CF0, #00DFD8);
   -webkit-background-clip: text;

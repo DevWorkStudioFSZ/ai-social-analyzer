@@ -1,42 +1,88 @@
+import Navbar from "./Navbar";
+
 export default function Layout({ children }) {
   return (
-    <>
-      {/* *********************Navbar ********/}
+    <div className="d-flex flex-column min-vh-100">
+      <Navbar />
 
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div className="container-fluid">
-    <a className="navbar-brand d-flex align-items-center" href="/">
-      <img src="/logo.png" alt="MarketMate Logo" width="60" height="60" className="me-4 rounded" />
-      <span className="fs-4">MarketMate</span>
-    </a>
-
-    <div className="d-flex">
-      <a className="nav-link text-white me-4" href="#about">About</a>
-      <a className="nav-link text-white me-4" href="#contact">Contact</a>
-    </div>
-  </div>
-</nav>
-
-
-
-      {/* *************Main Content **************8*/}
-      <main className="flex-grow-1 animated-bg py-5" style={{ minHeight: '85vh' }}>
-
-        {children}
-      </main>
+      {/* Main Body */}
+      <main className="flex-grow-1">{children}</main>
 
       {/* Footer */}
-      <footer className="bg-dark text-white py-3 mt-auto">
-        <div className="container d-flex justify-content-between align-items-center">
-          <span>&copy; {new Date().getFullYear()} MarketMate</span>
-          
+<footer className="pt-5 mt-5" style={{ 
+    background: "linear-gradient(180deg, #1a1a1a 0%, #2f2f2f 100%)", 
+    color: "#fff" 
+}}>
+  <div className="container">
+    <div className="row gy-4">
+      {/* Brand Info */}
+      <div className="col-lg-4 col-md-6">
+        <h4 className="fw-bold mb-2">MarketMate</h4>
+        <p className="small text-light">
+          AI-powered marketing assistant that audits your online presence, suggests improvements, 
+          and helps your brand grow smarter.
+        </p>
+      </div>
 
-        </div>
-      </footer>
-    </>
+      {/* Quick Links */}
+      <div className="col-lg-2 col-md-6">
+        <h6 className="fw-bold mb-3">Quick Links</h6>
+        <ul className="list-unstyled small">
+          <li><a href="/home" className="text-light text-decoration-none hover-effect">Home</a></li>
+          <li><a href="/about" className="text-light text-decoration-none hover-effect">About</a></li>
+          <li><a href="/contact" className="text-light text-decoration-none hover-effect">Contact</a></li>
+        </ul>
+      </div>
+
+      {/* Services */}
+      <div className="col-lg-3 col-md-6">
+        <h6 className="fw-bold mb-3">Services</h6>
+        <ul className="list-unstyled small">
+          <li>🔎 SEO Audit</li>
+          <li>📊 Social Stats</li>
+          <li>💡 Post Ideas</li>
+          <li>📈 Recommendations</li>
+        </ul>
+      </div>
+
+      {/* Language Toggle */}
+      <div className="col-lg-3 col-md-6 d-flex flex-column">
+        <h6 className="fw-bold mb-3">Language</h6>
+        <select className="form-select form-select-sm w-50">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option value="de">Deutsch</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  {/* Bottom Bar */}
+  <div className="text-center py-3 mt-4" style={{ backgroundColor: "#121212" }}>
+    <small className="color:white">
+      &copy; {new Date().getFullYear()} MarketMate. All Rights Reserved.
+    </small>
+  </div>
+
+  <style jsx>{`
+    a.hover-effect:hover {
+      color: #0d6efd;
+      text-decoration: underline;
+      transition: 0.3s;
+    }
+    select.form-select {
+      background-color: #333;
+      color: #fff;
+      border: none;
+    }
+    select.form-select:focus {
+      box-shadow: 0 0 0 0.2rem rgba(13,110,253,.25);
+      outline: none;
+    }
+  `}</style>
+</footer>
+
+    </div>
   );
 }
-
-
-
-
