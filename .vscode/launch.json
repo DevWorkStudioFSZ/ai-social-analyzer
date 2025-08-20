@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Uvicorn",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/venv/Scripts/uvicorn.exe",
+      "args": ["backend.main:app", "--reload"],
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/backend"
+      },
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}

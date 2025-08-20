@@ -226,15 +226,28 @@ def analyze_competitors(company_name: str, limit: int = 6) -> Dict:
         db.close()
     # -----------------------------------------------------
 
-    chart_data = [
+    # chart_data = [
+    #     {
+    #         "competitor": c["name"],
+    #         "presence_score": c["metrics"]["presence_score"],
+    #         "activity_index": c["metrics"]["activity_index"],
+    #         **{f"{plat}_mentions_month": c["metrics"]["mentions_last_30_days"][plat] for plat in PLATFORMS}
+    #     }
+    #     for c in competitors
+    # ]
+        chart_data = [
         {
             "competitor": c["name"],
             "presence_score": c["metrics"]["presence_score"],
             "activity_index": c["metrics"]["activity_index"],
-            **{f"{plat}_mentions_month": c["metrics"]["mentions_last_30_days"][plat] for plat in PLATFORMS}
+            **{
+                f"{plat}_mentions_month": c["metrics"]["mentions_last_30_days"][plat]
+                for plat in PLATFORMS
+            }
         }
         for c in competitors
     ]
+
 
     return {
         "company": company_name,

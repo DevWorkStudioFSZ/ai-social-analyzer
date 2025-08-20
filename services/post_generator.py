@@ -1,7 +1,7 @@
 import google.generativeai as genai
 import os
 from dotenv import load_dotenv
-
+# D:\marketmate\backend\services\post_generator.py
 load_dotenv()
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
