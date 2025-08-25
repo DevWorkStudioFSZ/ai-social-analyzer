@@ -47,17 +47,17 @@ def generate_caption_and_hashtags(
             hashtags = ""
 
         # ✅ Save to DB
-        db: Session = SessionLocal()
+        # db: Session = SessionLocal()
         new_content = GeneratedContent(
             platform=platform,
             caption=caption,
             hashtags=hashtags,
             sentiment_score=0.0  # placeholder for now
         )
-        db.add(new_content)
-        db.commit()
-        db.refresh(new_content)
-        db.close()
+        # db.add(new_content)
+        # db.commit()
+        # db.refresh(new_content)
+        # db.close()
 
         return {"caption": caption, "hashtags": hashtags}
 

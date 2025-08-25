@@ -1,5 +1,3 @@
-# backend/api/routes/competitors.py
-
 from fastapi import APIRouter, HTTPException, Query
 from services.competitors_service import analyze_competitors
 

@@ -1,5 +1,3 @@
-# backend/services/scheduler.py
-
 from apscheduler.schedulers.background import BackgroundScheduler
 from sqlalchemy.orm import Session
 from datetime import datetime, timedelta

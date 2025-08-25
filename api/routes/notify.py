@@ -1,15 +1,3 @@
-# from fastapi import APIRouter
-# # D:\marketmate\backend\api\routes\notify.py
-# router = APIRouter()
-
-# @router.get("/notify")
-# def send_notifications():
-#     # Placeholder: implement APScheduler/SMTP logic later
-#     return {"message": "Notification check ran successfully"}
-
-
-
-# backend/api/routes/notify.py
 from fastapi import APIRouter
 from datetime import datetime
 
