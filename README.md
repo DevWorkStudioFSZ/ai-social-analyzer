@@ -3,7 +3,7 @@
 MarketMate is a **full-stack AI-powered platform** that helps businesses and creators audit their social media presence, discover trends, analyze competitors, and get actionable insights for content strategy.  
 
 - **Frontend:** Next.js + Bootstrap + Recharts (glassmorphism-inspired UI)  
-- **Backend:** FastAPI + PostgreSQL + AI integrations (OpenAI, SerpAPI)  
+- **Backend:** FastAPI + PostgreSQL + AI integrations (Gemini, SerpAPI)  
 - **Architecture:** Monorepo with separate `frontend` and `backend` branches, while `main` holds documentation.
 
 ---
